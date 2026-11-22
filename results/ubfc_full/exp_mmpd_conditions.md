@@ -1,0 +1,81 @@
+# Condition-Stratified Zero-Shot Robustness (MMPD & MCD-rPPG)
+
+| Dataset   | Condition                     | Model                        |   Sessions | Mean_Pearson     | Mean_Lag_Pearson   | Mean_HR_MAE   | Mean_SNR_dB   |
+|:----------|:------------------------------|:-----------------------------|-----------:|:-----------------|:-------------------|:--------------|:--------------|
+| MMPD      | Stationary (Low Motion)       | CHROM (face_crop_only)       |          4 | -0.1486 ± 0.0000 | 0.3857 ± 0.0000    | 6.19 ± 0.00   | -3.26 ± 0.00  |
+| MMPD      | Rotation (Head Motion)        | CHROM (face_crop_only)       |          4 | -0.0197 ± 0.0000 | 0.3743 ± 0.0000    | 15.28 ± 0.00  | -4.01 ± 0.00  |
+| MMPD      | Talking (Speech/Mouth Motion) | CHROM (face_crop_only)       |          8 | -0.1080 ± 0.0000 | 0.3622 ± 0.0000    | 11.38 ± 0.00  | -4.67 ± 0.00  |
+| MMPD      | Talking + LED-low             | CHROM (face_crop_only)       |          4 | -0.0987 ± 0.0000 | 0.3330 ± 0.0000    | 17.93 ± 0.00  | -5.23 ± 0.00  |
+| MMPD      | Talking + LED-high            | CHROM (face_crop_only)       |          4 | -0.1172 ± 0.0000 | 0.3913 ± 0.0000    | 4.84 ± 0.00   | -4.10 ± 0.00  |
+| MMPD      | Stationary (Low Motion)       | CHROM (forehead_cheeks_only) |          4 | -0.1710 ± 0.0000 | 0.4741 ± 0.0000    | 6.14 ± 0.00   | -2.11 ± 0.00  |
+| MMPD      | Rotation (Head Motion)        | CHROM (forehead_cheeks_only) |          4 | 0.0055 ± 0.0000  | 0.3725 ± 0.0000    | 7.40 ± 0.00   | -2.85 ± 0.00  |
+| MMPD      | Talking (Speech/Mouth Motion) | CHROM (forehead_cheeks_only) |          8 | -0.1724 ± 0.0000 | 0.4178 ± 0.0000    | 5.19 ± 0.00   | -3.62 ± 0.00  |
+| MMPD      | Talking + LED-low             | CHROM (forehead_cheeks_only) |          4 | -0.1593 ± 0.0000 | 0.3277 ± 0.0000    | 10.09 ± 0.00  | -5.38 ± 0.00  |
+| MMPD      | Talking + LED-high            | CHROM (forehead_cheeks_only) |          4 | -0.1855 ± 0.0000 | 0.5078 ± 0.0000    | 0.30 ± 0.00   | -1.85 ± 0.00  |
+| MMPD      | Stationary (Low Motion)       | POS (face_crop_only)         |          4 | -0.2124 ± 0.0000 | 0.3906 ± 0.0000    | 13.26 ± 0.00  | -3.55 ± 0.00  |
+| MMPD      | Rotation (Head Motion)        | POS (face_crop_only)         |          4 | -0.0180 ± 0.0000 | 0.4127 ± 0.0000    | 10.89 ± 0.00  | -3.06 ± 0.00  |
+| MMPD      | Talking (Speech/Mouth Motion) | POS (face_crop_only)         |          8 | -0.0982 ± 0.0000 | 0.4046 ± 0.0000    | 15.68 ± 0.00  | -4.68 ± 0.00  |
+| MMPD      | Talking + LED-low             | POS (face_crop_only)         |          4 | -0.1092 ± 0.0000 | 0.3545 ± 0.0000    | 17.20 ± 0.00  | -5.63 ± 0.00  |
+| MMPD      | Talking + LED-high            | POS (face_crop_only)         |          4 | -0.0873 ± 0.0000 | 0.4547 ± 0.0000    | 14.16 ± 0.00  | -3.74 ± 0.00  |
+| MMPD      | Stationary (Low Motion)       | POS (forehead_cheeks_only)   |          4 | -0.2035 ± 0.0000 | 0.4461 ± 0.0000    | 13.49 ± 0.00  | -2.56 ± 0.00  |
+| MMPD      | Rotation (Head Motion)        | POS (forehead_cheeks_only)   |          4 | -0.0154 ± 0.0000 | 0.3873 ± 0.0000    | 19.05 ± 0.00  | -3.66 ± 0.00  |
+| MMPD      | Talking (Speech/Mouth Motion) | POS (forehead_cheeks_only)   |          8 | -0.1437 ± 0.0000 | 0.4147 ± 0.0000    | 15.03 ± 0.00  | -3.22 ± 0.00  |
+| MMPD      | Talking + LED-low             | POS (forehead_cheeks_only)   |          4 | -0.1481 ± 0.0000 | 0.3645 ± 0.0000    | 16.35 ± 0.00  | -5.15 ± 0.00  |
+| MMPD      | Talking + LED-high            | POS (forehead_cheeks_only)   |          4 | -0.1394 ± 0.0000 | 0.4650 ± 0.0000    | 13.72 ± 0.00  | -1.29 ± 0.00  |
+| MMPD      | Stationary (Low Motion)       | PhysNet                      |          4 | -0.0664 ± 0.0045 | 0.4726 ± 0.0205    | 3.27 ± 2.88   | -1.56 ± 0.34  |
+| MMPD      | Rotation (Head Motion)        | PhysNet                      |          4 | 0.0878 ± 0.0384  | 0.3696 ± 0.0223    | 26.59 ± 4.92  | -3.47 ± 0.23  |
+| MMPD      | Talking (Speech/Mouth Motion) | PhysNet                      |          8 | 0.1016 ± 0.0307  | 0.4850 ± 0.0190    | 13.81 ± 0.18  | -2.60 ± 0.24  |
+| MMPD      | Talking + LED-low             | PhysNet                      |          4 | 0.0524 ± 0.0183  | 0.4066 ± 0.0098    | 27.13 ± 0.29  | -4.58 ± 0.13  |
+| MMPD      | Talking + LED-high            | PhysNet                      |          4 | 0.1509 ± 0.0433  | 0.5633 ± 0.0309    | 0.48 ± 0.10   | -0.61 ± 0.56  |
+| MMPD      | Stationary (Low Motion)       | TS-CAN                       |          4 | 0.0237 ± 0.0251  | 0.4983 ± 0.0121    | 1.04 ± 0.19   | -1.91 ± 0.24  |
+| MMPD      | Rotation (Head Motion)        | TS-CAN                       |          4 | 0.0432 ± 0.0162  | 0.3607 ± 0.0086    | 19.45 ± 5.58  | -4.01 ± 0.25  |
+| MMPD      | Talking (Speech/Mouth Motion) | TS-CAN                       |          8 | 0.1581 ± 0.0296  | 0.4613 ± 0.0057    | 9.22 ± 2.28   | -2.56 ± 0.09  |
+| MMPD      | Talking + LED-low             | TS-CAN                       |          4 | 0.0883 ± 0.0140  | 0.3872 ± 0.0087    | 15.08 ± 6.01  | -3.37 ± 0.16  |
+| MMPD      | Talking + LED-high            | TS-CAN                       |          4 | 0.2279 ± 0.0538  | 0.5354 ± 0.0197    | 3.35 ± 1.77   | -1.75 ± 0.34  |
+| MMPD      | Stationary (Low Motion)       | EfficientPhys                |          4 | 0.0649 ± 0.0023  | 0.4667 ± 0.0085    | 15.60 ± 5.95  | -2.66 ± 0.22  |
+| MMPD      | Rotation (Head Motion)        | EfficientPhys                |          4 | 0.0381 ± 0.0389  | 0.3390 ± 0.0385    | 28.95 ± 6.09  | -4.08 ± 1.28  |
+| MMPD      | Talking (Speech/Mouth Motion) | EfficientPhys                |          8 | 0.1327 ± 0.0050  | 0.4131 ± 0.0048    | 16.35 ± 0.17  | -4.32 ± 0.27  |
+| MMPD      | Talking + LED-low             | EfficientPhys                |          4 | 0.1068 ± 0.0041  | 0.3565 ± 0.0065    | 26.68 ± 0.40  | -4.92 ± 0.18  |
+| MMPD      | Talking + LED-high            | EfficientPhys                |          4 | 0.1586 ± 0.0089  | 0.4697 ± 0.0123    | 6.02 ± 0.06   | -3.72 ± 0.36  |
+| MMPD      | Stationary (Low Motion)       | PhysFormer                   |          4 | 0.0001 ± 0.0529  | 0.5002 ± 0.0069    | 10.96 ± 7.14  | -1.50 ± 0.20  |
+| MMPD      | Rotation (Head Motion)        | PhysFormer                   |          4 | 0.0349 ± 0.0663  | 0.3998 ± 0.0187    | 24.35 ± 12.70 | -2.30 ± 0.86  |
+| MMPD      | Talking (Speech/Mouth Motion) | PhysFormer                   |          8 | 0.1202 ± 0.0412  | 0.4755 ± 0.0225    | 11.79 ± 2.44  | -2.53 ± 0.28  |
+| MMPD      | Talking + LED-low             | PhysFormer                   |          4 | 0.0591 ± 0.0437  | 0.3903 ± 0.0280    | 22.29 ± 4.53  | -4.12 ± 0.39  |
+| MMPD      | Talking + LED-high            | PhysFormer                   |          4 | 0.1814 ± 0.0396  | 0.5606 ± 0.0170    | 1.28 ± 1.11   | -0.95 ± 0.18  |
+| MMPD      | Stationary (Low Motion)       | SKIA-v1 Raw                  |          4 | -0.1000 ± 0.0481 | 0.4760 ± 0.0077    | 1.36 ± 0.11   | -1.38 ± 0.04  |
+| MMPD      | Rotation (Head Motion)        | SKIA-v1 Raw                  |          4 | 0.0690 ± 0.0547  | 0.4178 ± 0.0210    | 23.39 ± 6.59  | -1.78 ± 0.47  |
+| MMPD      | Talking (Speech/Mouth Motion) | SKIA-v1 Raw                  |          8 | -0.0265 ± 0.0444 | 0.4321 ± 0.0116    | 18.56 ± 2.04  | -3.92 ± 0.35  |
+| MMPD      | Talking + LED-low             | SKIA-v1 Raw                  |          4 | -0.0409 ± 0.0402 | 0.3781 ± 0.0095    | 32.11 ± 4.83  | -5.28 ± 0.38  |
+| MMPD      | Talking + LED-high            | SKIA-v1 Raw                  |          4 | -0.0121 ± 0.0499 | 0.4862 ± 0.0138    | 5.01 ± 1.40   | -2.57 ± 0.42  |
+| MMPD      | Stationary (Low Motion)       | SKIA-v1 Full                 |          4 | -0.0099 ± 0.0325 | 0.4982 ± 0.0269    | 1.19 ± 0.07   | -1.19 ± 0.18  |
+| MMPD      | Rotation (Head Motion)        | SKIA-v1 Full                 |          4 | 0.0830 ± 0.0707  | 0.4212 ± 0.0110    | 14.91 ± 7.18  | -1.94 ± 0.57  |
+| MMPD      | Talking (Speech/Mouth Motion) | SKIA-v1 Full                 |          8 | 0.0752 ± 0.0386  | 0.4303 ± 0.0194    | 16.94 ± 0.93  | -4.14 ± 0.67  |
+| MMPD      | Talking + LED-low             | SKIA-v1 Full                 |          4 | 0.0229 ± 0.0462  | 0.4044 ± 0.0184    | 24.66 ± 5.12  | -4.55 ± 0.82  |
+| MMPD      | Talking + LED-high            | SKIA-v1 Full                 |          4 | 0.1274 ± 0.0311  | 0.4562 ± 0.0542    | 9.22 ± 5.19   | -3.74 ± 2.15  |
+| MMPD      | Stationary (Low Motion)       | SKIA-v2 (Ours)               |          4 | -0.0326 ± 0.0121 | 0.4686 ± 0.0100    | 1.32 ± 0.07   | -1.37 ± 0.28  |
+| MMPD      | Rotation (Head Motion)        | SKIA-v2 (Ours)               |          4 | 0.0774 ± 0.0113  | 0.3446 ± 0.0141    | 24.95 ± 5.28  | -4.61 ± 0.98  |
+| MMPD      | Talking (Speech/Mouth Motion) | SKIA-v2 (Ours)               |          8 | 0.0331 ± 0.0272  | 0.4234 ± 0.0113    | 19.23 ± 3.90  | -4.23 ± 0.21  |
+| MMPD      | Talking + LED-low             | SKIA-v2 (Ours)               |          4 | 0.0373 ± 0.0230  | 0.3741 ± 0.0147    | 33.22 ± 7.42  | -5.79 ± 0.40  |
+| MMPD      | Talking + LED-high            | SKIA-v2 (Ours)               |          4 | 0.0289 ± 0.0360  | 0.4727 ± 0.0138    | 5.25 ± 1.15   | -2.68 ± 0.08  |
+| MCD-rPPG  | Resting (before)              | CHROM (face_crop_only)       |          5 | 0.2185 ± 0.0000  | 0.4519 ± 0.0000    | 8.91 ± 0.00   | -0.06 ± 0.00  |
+| MCD-rPPG  | Post-Exercise (after)         | CHROM (face_crop_only)       |          5 | 0.1538 ± 0.0000  | 0.5051 ± 0.0000    | 12.00 ± 0.00  | -0.60 ± 0.00  |
+| MCD-rPPG  | Resting (before)              | CHROM (forehead_cheeks_only) |          5 | 0.1916 ± 0.0000  | 0.5362 ± 0.0000    | 3.23 ± 0.00   | 2.24 ± 0.00   |
+| MCD-rPPG  | Post-Exercise (after)         | CHROM (forehead_cheeks_only) |          5 | 0.1478 ± 0.0000  | 0.3902 ± 0.0000    | 24.25 ± 0.00  | -6.17 ± 0.00  |
+| MCD-rPPG  | Resting (before)              | POS (face_crop_only)         |          5 | 0.3744 ± 0.0000  | 0.6023 ± 0.0000    | 8.07 ± 0.00   | -0.01 ± 0.00  |
+| MCD-rPPG  | Post-Exercise (after)         | POS (face_crop_only)         |          5 | 0.3561 ± 0.0000  | 0.6155 ± 0.0000    | 8.08 ± 0.00   | -0.56 ± 0.00  |
+| MCD-rPPG  | Resting (before)              | POS (forehead_cheeks_only)   |          5 | 0.3422 ± 0.0000  | 0.6261 ± 0.0000    | 7.25 ± 0.00   | 1.52 ± 0.00   |
+| MCD-rPPG  | Post-Exercise (after)         | POS (forehead_cheeks_only)   |          5 | 0.3444 ± 0.0000  | 0.5948 ± 0.0000    | 11.01 ± 0.00  | -3.96 ± 0.00  |
+| MCD-rPPG  | Resting (before)              | PhysNet                      |          5 | 0.6258 ± 0.0052  | 0.6556 ± 0.0030    | 3.69 ± 0.06   | 0.53 ± 0.15   |
+| MCD-rPPG  | Post-Exercise (after)         | PhysNet                      |          5 | 0.6309 ± 0.0126  | 0.6995 ± 0.0197    | 2.01 ± 1.75   | 0.07 ± 0.54   |
+| MCD-rPPG  | Resting (before)              | TS-CAN                       |          5 | 0.3455 ± 0.0238  | 0.4719 ± 0.0146    | 13.28 ± 2.49  | -3.64 ± 0.99  |
+| MCD-rPPG  | Post-Exercise (after)         | TS-CAN                       |          5 | 0.3284 ± 0.0357  | 0.4931 ± 0.0446    | 10.47 ± 2.86  | -2.60 ± 1.08  |
+| MCD-rPPG  | Resting (before)              | EfficientPhys                |          5 | 0.4192 ± 0.0581  | 0.4780 ± 0.0175    | 8.97 ± 0.64   | -1.62 ± 0.31  |
+| MCD-rPPG  | Post-Exercise (after)         | EfficientPhys                |          5 | 0.4228 ± 0.0445  | 0.5293 ± 0.0158    | 10.12 ± 1.45  | -2.53 ± 0.80  |
+| MCD-rPPG  | Resting (before)              | PhysFormer                   |          5 | 0.3926 ± 0.0930  | 0.5172 ± 0.0181    | 7.02 ± 4.54   | -1.28 ± 0.95  |
+| MCD-rPPG  | Post-Exercise (after)         | PhysFormer                   |          5 | 0.3713 ± 0.0245  | 0.5392 ± 0.0076    | 7.27 ± 3.00   | -2.12 ± 0.81  |
+| MCD-rPPG  | Resting (before)              | SKIA-v1 Raw                  |          5 | 0.5189 ± 0.0192  | 0.6323 ± 0.0155    | 5.94 ± 1.43   | 0.49 ± 0.29   |
+| MCD-rPPG  | Post-Exercise (after)         | SKIA-v1 Raw                  |          5 | 0.5866 ± 0.0164  | 0.6856 ± 0.0036    | 4.62 ± 2.00   | 1.13 ± 0.20   |
+| MCD-rPPG  | Resting (before)              | SKIA-v1 Full                 |          5 | 0.5938 ± 0.0420  | 0.6414 ± 0.0235    | 2.79 ± 1.10   | 0.43 ± 0.24   |
+| MCD-rPPG  | Post-Exercise (after)         | SKIA-v1 Full                 |          5 | 0.5670 ± 0.0490  | 0.6879 ± 0.0238    | 4.21 ± 3.73   | 0.61 ± 0.20   |
+| MCD-rPPG  | Resting (before)              | SKIA-v2 (Ours)               |          5 | 0.5799 ± 0.0212  | 0.6568 ± 0.0071    | 1.09 ± 0.06   | 1.63 ± 0.11   |
+| MCD-rPPG  | Post-Exercise (after)         | SKIA-v2 (Ours)               |          5 | 0.5563 ± 0.0302  | 0.6643 ± 0.0130    | 9.82 ± 1.61   | -1.30 ± 0.33  |

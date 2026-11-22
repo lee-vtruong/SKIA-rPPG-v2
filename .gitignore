@@ -1,0 +1,30 @@
+# Datasets and trained weights
+data/
+checkpoints/
+*.pt
+*.pth
+
+# Auto-downloaded landmark/detector weights (downloaded on demand by src/roi_extractor.py)
+models/*.yaml
+models/*.onnx
+models/*.task
+
+# Logs and caches
+logs/
+*.log
+__pycache__/
+*.py[cod]
+*$py.class
+*.npz
+scratch/
+
+# Virtual environments & notebooks
+.venv/
+venv/
+mask_env/
+.ipynb_checkpoints/
+
+# OS & temporary SSH files
+.DS_Store
+Thumbs.db
+.github_ssh/
